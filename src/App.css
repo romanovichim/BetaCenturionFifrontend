@@ -1,0 +1,9 @@
+.btn-flat {
+    background-color: purple;
+    color: white;
+  }
+
+  .btn-huge {
+    padding: 5rem 10rem;
+    font-size: 1.5rem;
+  }
