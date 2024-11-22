@@ -48,10 +48,11 @@ async function getOffersData(testnet: boolean) {
     const page_size = 150;
 
     //const addr_prod = '"EQDy9MAb0FQN0WpDi8NVio2rEDcK2cSDNDeEJOEW9PIyImL6"'; // random nft col TBD
-    const addr_testnet = '"kQCLNjNkqOtHaOeKEU6FC_FhPmpP7ZmPaeUa10eHZhW_msPk"';
+    //const addr_testnet = '"kQCLNjNkqOtHaOeKEU6FC_FhPmpP7ZmPaeUa10eHZhW_msPk"';
 
     //const addr = testnet ? addr_testnet : addr_prod;
-    const addr = addr_testnet
+    //const addr = addr_testnet
+    const addr = '"EQCI_xeNAnXLYULbjEzt_BZA9zwKG-5Vk079lN9Rve2QB1QE"';
 
     let queryStr="";
 	for (let page = 0; page < needed_queries; page++) {

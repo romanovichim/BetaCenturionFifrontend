@@ -96,7 +96,7 @@ const Offers = () => {
           //setData(data);
           (async () => {
             
-          const data = await getFilteredOffersData(true,formatedAddress);
+          const data = await getFilteredOffersData(false,formatedAddress);
           //TBD trigger error if status error
             
           setData(data);
@@ -210,9 +210,7 @@ const Offers = () => {
         <Container>
           <h2 style={{color: '#D9D9D9' }} className="py-3">My offers and contracts</h2>
           <p style={{color: '#D9D9D9' }} className="py-2">Once your offer is accepted by a borrower, a secure contract is created, freezing the NFT in their wallet. When the loan ends, you will get paid the total TON (loan with interest). In the event of a default, you can foreclose, which transfers the collateral NFT to your wallet.</p>
-          <p className="bg-danger text-white"> 
-          {network ? (network === CHAIN.MAINNET ? "mainnet" : "testnet") : "Disconnected"}
-          </p>
+
           <Table striped hover variant="dark"  >
           <thead>
             
@@ -244,9 +242,7 @@ const Offers = () => {
       <Container>
       <h2 style={{color: '#D9D9D9' }} className="py-3">My offers and contracts</h2>
       <p style={{color: '#D9D9D9' }} className="py-2">Browse collections below, and name your price. The current best offer will be shown to borrowers. To take your offer, they lock in an NFT from that collection to use as collateral. You will be repaid at the end of the loan, plus interest. If they fail to repay, you get to keep the NFT.</p>
-      <p className="bg-danger text-white"> 
-      {network ? (network === CHAIN.MAINNET ? "mainnet" : "testnet") : "Disconnected"}
-      </p>
+
   
       <p>NO DATA</p>
   

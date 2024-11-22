@@ -101,7 +101,7 @@ const Loans = () => {
           //setData(data);
           (async () => {
             
-          const data = await getFilteredLoansData(true,formatedAddress);
+          const data = await getFilteredLoansData(false,formatedAddress);
           //TBD trigger error if status error
             
           setData(data);
@@ -227,9 +227,7 @@ const Loans = () => {
         <Container>
           <h2 style={{color: '#D9D9D9' }} className="py-3">My loans</h2>
           <p style={{color: '#D9D9D9' }} className="py-2">Here are the NFTs you borrowed against. You must pay these in full by the expiration date in order to keep your NFT..</p>
-          <p className="bg-danger text-white"> 
-          {network ? (network === CHAIN.MAINNET ? "mainnet" : "testnet") : "Disconnected"}
-          </p>
+
           <Table striped hover variant="dark"  >
           <thead>
             
@@ -261,9 +259,6 @@ const Loans = () => {
       <Container>
       <h2 style={{color: '#D9D9D9' }} className="py-3">My loans</h2>
       <p style={{color: '#D9D9D9' }} className="py-2">Here are the NFTs you borrowed against. You must pay these in full by the expiration date in order to keep your NFT..</p>
-      <p className="bg-danger text-white"> 
-      {network ? (network === CHAIN.MAINNET ? "mainnet" : "testnet") : "Disconnected"}
-      </p>
   
       <p>NO DATA</p>
   

@@ -231,7 +231,7 @@ const Borrow = () => {
   useEffect(() => {
     if (deployer_arr[0].deployer_address) {
       //setAddress(address);
-      fetchNextOfferITem(deployer_arr[0].deployer_address,true).then((response) => {
+      fetchNextOfferITem(deployer_arr[0].deployer_address,false).then((response) => {
         setnextItem(response)
       });
     }
@@ -246,7 +246,7 @@ const Borrow = () => {
     useEffect(() => {
       if (address) {
         //setAddress(address);
-        fetchNFTOwned(address,deployer_arr[0].nft_col_address,true).then((response) => {
+        fetchNFTOwned(address,deployer_arr[0].nft_col_address,false).then((response) => {
           if (response.nft_items) setownedNFTarr(response.nft_items); 
           if (!response.nft_items) console.log(response); 
         });
@@ -276,7 +276,7 @@ const Borrow = () => {
         //const data = fetchData() as richArr;
         //setData(data);
         (async () => {
-        const data = await getEnrichedOffersData(true);
+        const data = await getEnrichedOffersData(false);
         //TBD trigger error if status error
         
         setData(data);
@@ -330,6 +330,9 @@ const Borrow = () => {
   // нужны обработчики undefined
   //x = (typeof x === 'undefined') ? def_val : x;
   //condition ? exprIfTrue : exprIfFalse
+   //<p className="bg-danger text-white"> 
+   //{network ? (network === CHAIN.MAINNET ? "mainnet" : "testnet") : "Disconnected"}
+   //</p>
   //let bestOfferValue = data.data === {} ? 'No data' :  (typeof data.data.best_offer_value === 'undefined') ? 'default' : bestOfferValue;
 
   if(typeof data.data === 'undefined') {
@@ -338,9 +341,7 @@ const Borrow = () => {
     <Container>
     <h2 style={{color: '#D9D9D9' }} className="py-3">Borrow against my NFTs</h2>
     <p style={{color: '#D9D9D9' }} className="py-2">Instantly take a loan against your NFTs. Escrow-free loans allows you to keep the collateral NFT in offer smart-contract. When you accept a loan offer, a secure contract is created, freezing the NFT inside. Not repaying by the due date means the lender can repossess your NFT. Successfully pay the loan in full by the expiration date to automatically thaw the NFT.</p>
-    <p className="bg-danger text-white"> 
-    {network ? (network === CHAIN.MAINNET ? "mainnet" : "testnet") : "Disconnected"}
-    </p>
+
 
     <p>NO DATA</p>
 
@@ -537,14 +538,16 @@ const Borrow = () => {
 
  
   ////////// MAIN BODY //////////// https://nft.fragment.com/username/durove.webp
+  //      <p className="bg-danger text-white"> 
+  //{network ? (network === CHAIN.MAINNET ? "mainnet" : "testnet") : "Disconnected"}
+  //</p>
+  //
   return (
     <div className="vh-100 bg-dark">
           <Container>
       <h2 style={{color: '#D9D9D9' }} className="py-3">Make loan offers on NFT collections.</h2>
       <p style={{color: '#D9D9D9' }} className="py-2">Browse collections below, and name your price. The current best offer will be shown to borrowers. To take your offer, they lock in an NFT from that collection to use as collateral. You will be repaid at the end of the loan, plus interest. If they fail to repay, you get to keep the NFT.</p>
-      <p className="bg-danger text-white"> 
-      {network ? (network === CHAIN.MAINNET ? "mainnet" : "testnet") : "Disconnected"}
-      </p>
+
       <Table striped hover variant="dark"  >
       <thead>
         
